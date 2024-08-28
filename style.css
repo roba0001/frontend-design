@@ -1,2 +1,20 @@
 /* Dine styles her */
-article {}
+
+article {
+  outline: solid;
+  display: flow-root;
+
+  > * + * {
+    margin-top: var(--flow-space, 5rlh);
+  }
+
+  h2 {
+    --flow-space: 2rlh;
+  }
+  h3 {
+    --flow-space: 1rlh;
+  }
+  h3 + * {
+    --flow-space: 0.25rlh;
+  }
+}
