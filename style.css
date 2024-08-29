@@ -1,8 +1,17 @@
-article {
+/* main {
   max-width: 65ch;
   margin-inline: auto;
-}
+} */
 
-img {
-  width: 100svh;
+article {
+  display: grid;
+  grid-template-columns: [full-start]1fr 2rem [content]minmax(0, 65ch) 2rem 1fr[full-end];
+
+  > * {
+    grid-column: content;
+  }
+
+  img {
+    grid-column: full;
+  }
 }
