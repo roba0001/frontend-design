@@ -4,8 +4,13 @@
 } */
 
 article {
+  --callout: 4rem;
   display: grid;
-  grid-template-columns: [full-start]1fr 2rem [content]minmax(0, 65ch) 2rem 1fr[full-end];
+  grid-template-columns:
+    [full-start]1fr [callout-start]var(--callout) [content]minmax(0, 65ch) [callout-end]var(
+      --callout
+    )
+    1fr[full-end];
 
   > * {
     grid-column: content;
@@ -13,5 +18,9 @@ article {
 
   img {
     grid-column: full;
+  }
+
+  blockquote {
+    grid-column: callout;
   }
 }
